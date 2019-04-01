@@ -33,6 +33,7 @@ pipeline
             steps{
                 sh '''
                 cd /root/
+                kubectl delete -f complete-demo.yaml
                 sed -i "s/front-end-1-.*/front-end-1-${BUILD_NUMBER}/g" complete-demo.yaml
                 kubectl create -f complete-demo.yaml
                 '''
