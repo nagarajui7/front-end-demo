@@ -5,8 +5,6 @@ pipeline
         stage('Clone'){
             steps {
                sh '''
-               sudo su - 
-               cd /root
                git clone https://github.com/nagarajui7/front-end-demo.git
                '''
             }
@@ -19,7 +17,7 @@ pipeline
         stage('docker image creation'){
             steps{
                 sh '''
-                cd /root/front-end-demo
+                cd front-end-demo
                 sudo docker build -t nagarajubatchu1/front-end-1-${BUILD_NUMBER} .
                 '''
             }
@@ -32,7 +30,7 @@ pipeline
         stage('kubernetes'){
             steps{
                 sh '''
-                cd /root/front-end-demo
+                cd front-end-demo
 
                 sed -i "s/front-end-1-.*/front-end-1-${BUILD_NUMBER}/g" complete-demo.yaml
                 ansible-playbook -i /etc/ansible/hosts deployment.yml
