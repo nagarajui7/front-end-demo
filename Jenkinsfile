@@ -13,20 +13,20 @@ pipeline
         }
         stage('docker login'){
             steps{
-                sh 'docker login --username nagarajubatchu1 --password b@TChU!779263'
+                sh 'sudo docker login --username nagarajubatchu1 --password b@TChU!779263'
             }
         }
         stage('docker image creation'){
             steps{
                 sh '''
                 cd /root/front-end-demo
-                docker build -t nagarajubatchu1/front-end-1-${BUILD_NUMBER} .
+                sudo docker build -t nagarajubatchu1/front-end-1-${BUILD_NUMBER} .
                 '''
             }
         }
         stage('docker image push'){
             steps{
-                sh 'docker push nagarajubatchu1/front-end-1-${BUILD_NUMBER}'
+                sh 'sudo docker push nagarajubatchu1/front-end-1-${BUILD_NUMBER}'
             }
         }
         stage('kubernetes'){
