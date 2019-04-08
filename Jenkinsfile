@@ -6,7 +6,7 @@ pipeline
             steps {
                sh '''
                sudo su - 
-
+               cd /root
                git clone https://github.com/nagarajui7/front-end-demo.git
                '''
             }
