@@ -7,5 +7,5 @@
       when: inventory_hostname in groups['master']
       
     - name: Deploying the Sockshop Applications
-      shell: kubectl create -f /home/reddisekhara_n/front-end-demo/complete-demo.yaml
+      shell: kubectl create -f /root/complete-demo.yaml
       when: inventory_hostname in groups['master']
