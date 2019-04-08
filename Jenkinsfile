@@ -6,7 +6,7 @@ pipeline
             steps {
                sh '''
                cd /root
-               rm -rf front-end-demo
+
                git clone https://github.com/nagarajui7/front-end-demo.git
                '''
             }
@@ -33,7 +33,7 @@ pipeline
             steps{
                 sh '''
                 cd /root/
-//                kubectl delete -f complete-demo.yaml
+
                 sed -i "s/front-end-1-.*/front-end-1-${BUILD_NUMBER}/g" complete-demo.yaml
                 ansible-playbook deployment.yml
                 '''
