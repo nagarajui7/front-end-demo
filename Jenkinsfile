@@ -5,7 +5,7 @@ pipeline
         stage('Clone'){
             steps {
                sh '''
-               cd /root
+               sudo su - 
 
                git clone https://github.com/nagarajui7/front-end-demo.git
                '''
