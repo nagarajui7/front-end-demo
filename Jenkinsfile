@@ -34,7 +34,8 @@ pipeline
             steps{
                 sh '''
                 cd /home/reddisekhara_n/front-end-demo/
-                sed -i "s/front-end-1-.*/front-end-1-${BUILD_NUMBER}/g" front-end-deploy-svc.yml
+                sed -i "s/front-end-1-.*/front-end-1-${BUILD_NUMBER}/g" front-end-deploy.yml
+                sed -i "s/front-end-1-.*/front-end-1-${BUILD_NUMBER}/g" front-end-svc.yml
                 ansible-playbook -i /etc/ansible/hosts deployment.yml
                 '''
             }
