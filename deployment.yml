@@ -7,5 +7,5 @@
       when: inventory_hostname in groups['master']
       
     - name: Deploying the Sockshop Applications
-      shell: kubectl create -f /root/front-end-deploy-svc.yml
+      shell: kubectl apply -f /root/front-end-deploy-svc.yml
       when: inventory_hostname in groups['master']
