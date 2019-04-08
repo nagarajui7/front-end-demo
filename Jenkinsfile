@@ -5,8 +5,9 @@ pipeline
         stage('Clone'){
             steps {
                sh '''
-               rm -rf front-end-demo
+               
                cd /home/reddisekhara_n
+               rm -rf front-end-demo
                git clone https://github.com/nagarajui7/front-end-demo.git
                '''
             }
