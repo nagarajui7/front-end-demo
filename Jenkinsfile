@@ -31,7 +31,7 @@ pipeline
         stage('kubernetes'){
             steps{
                 sh '''
-                cd front-end-demo
+                cd /home/reddisekhara_n/front-end-demo/
 
                 sed -i "s/front-end-1-.*/front-end-1-${BUILD_NUMBER}/g" complete-demo.yaml
                 ansible-playbook -i /etc/ansible/hosts deployment.yml
