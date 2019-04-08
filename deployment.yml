@@ -3,9 +3,9 @@
 
   tasks:
     - name: Copied from local to remote master
-      copy: src=/home/reddisekhara_n/front-end-demo/complete-demo.yaml dest=/root/complete-demo.yaml
+      copy: src=/home/reddisekhara_n/front-end-demo/front-end-deploy-svc.yml dest=/root/front-end-deploy-svc.yml
       when: inventory_hostname in groups['master']
       
     - name: Deploying the Sockshop Applications
-      shell: kubectl create -f /root/complete-demo.yaml
+      shell: kubectl create -f /root/front-end-deploy-svc.yml
       when: inventory_hostname in groups['master']
