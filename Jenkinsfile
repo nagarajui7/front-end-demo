@@ -18,7 +18,7 @@ pipeline
         stage('docker image creation'){
             steps{
                 sh '''
-                cd front-end-demo
+                cd /home/reddisekhara_n/front-end-demo/
                 sudo docker build -t nagarajubatchu1/front-end-1-${BUILD_NUMBER} .
                 '''
             }
