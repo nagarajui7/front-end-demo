@@ -202,14 +202,14 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nagarajubatchu1/front-end-1-15
+  name: front-end-1-15
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: nagarajubatchu1/front-end-1-15
+        name: front-end-1-15
     spec:
       containers:
       - name: front-end
@@ -244,7 +244,7 @@ spec:
     targetPort: 8079
     nodePort: 30001
   selector:
-    name: nagarajubatchu1/front-end-1-15
+    name: front-end-1-15
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
